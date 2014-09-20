@@ -1,0 +1,29 @@
+<ndz_document>
+  <ndz_title>Field Inside a Straight, Infinite, Air-Core Solenoid</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>03/01/2004</ndz_date>
+  <ndz_abstract>
+  This simple formula can be derived directly from Maxwell's fourth 
+  equation, or Ampere's Law.
+  </ndz_abstract>
+  <ndz_section type="picture">
+    <ndz_image type="svg" name="infsolenoid" file="infsolenoid.svg" alt="Field due to an infinite solenoid" />
+  </ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation1" alt="Field due to an infinite solenoid">
+      B=\mu_oin
+    </ndz_image>
+    <p>
+    <b>B</b> is the magnetic field inside the solenoid, in teslas. The 
+    direction of the field is parallel to the axis of the solenoid. There 
+    is no field outside the solenoid.
+    </p><p>
+    <b>&mu;<sub>o</sub></b> is the permeability constant (1.26x10<sup>-6</sup> H/m)
+    </p><p>
+    <b>i</b> is the current in the wire, in amperes.
+    </p><p>
+    <b>n</b> is the number of turns of wire per unit length of the solenoid,
+     in 1/meters.
+    </p>
+  </ndz_section>  
+</ndz_document>

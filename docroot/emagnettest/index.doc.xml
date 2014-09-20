@@ -1,0 +1,128 @@
+<ndz_document>
+  <ndz_title>Site Directory</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>02/22/2004</ndz_date>
+  <ndz_abstract>
+  A small web site devoted to the vanishing art of practical magnet design
+  without FEA (Finite Element Analysis).
+  </ndz_abstract>
+  <ndz_section title="The Basics">
+    <dl>
+      <dd>
+        <table><tr><td>
+          <a href="./basics?maxwell">
+          <ndz_image type="tex" name="equation1" alt="Gauss's Law for Electricity" y="32">
+          \epsilon_o \oint \kappa \textbf{E} \cdot d\textbf{S} = q
+          </ndz_image>
+          </a>
+          </td>
+        <td>
+          <a href="./basics?maxwell">
+            Maxwell and His Equations
+          </a>
+        </td></tr>
+        </table>
+     </dd>
+     <dd>
+        <table><tr><td>
+          <a href="./basics?biotsavart">
+          <ndz_image type="svg" name="biotsavart" file="basics/biotsavart.svg" alt="The Law of Biot Savart" y="32"/>
+          </a>
+          </td>
+        <td>
+          <a href="./basics?biotsavart">
+            The Law of Biot Savart
+          </a>
+        </td></tr>
+        </table>
+      </dd>
+    </dl>
+  </ndz_section>
+  <ndz_section title="Simple Magnetic Field Formulas">
+    <dl>
+      <dd>
+        <table><tr><td>
+          <a href="./solenoids?straightwire">
+          <ndz_image type="svg" name="straightwire" file="solenoids/straightwire.svg" alt="Field due to a long straight wire" y="32"/>
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?straightwire">Field due to electric current in an
+          infinitely long, straight wire</a>
+          </td></tr>
+        </table>
+      </dd>
+      <dd>
+        <table><tr><td>
+          <a href="./solenoids?infsolenoid">
+          <ndz_image type="svg" name="infsolenoid" file="solenoids/infsolenoid.svg" alt="Field due to an infinite solenoid" y="32"/>
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?infsolenoid">Field inside an inifinitely
+          long, straight, air-core solenoid</a>
+          </td></tr>
+        </table>
+      </dd>
+      <dd>
+        <table><tr><td>
+          <a href="./solenoids?toroid">
+          <ndz_image type="svg" name="toroid" file="solenoids/toroid.svg" alt="Field inside an air-core toroid" y="32"/>
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?toroid">Field inside an air-core toroid</a>
+          </td></tr>
+        </table>
+     </dd>
+     <dd>
+        <table><tr><td>
+          <a href="./solenoids?currloop">
+          <ndz_image type="svg" name="currloop" file="solenoids/currloop.svg" alt="On-axis field due to a current loop" y="32" />
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?currloop">On-axis field due to a current loop</a>
+          </td></tr>
+        </table>
+      </dd>
+     <dd>
+        <table><tr><td>
+          <a href="./solenoids?thinsolenoid">
+          <ndz_image type="svg" name="thinsolenoid" file="solenoids/thinsolenoid.svg" alt="On-axis field due to a thin shell solenoid" y="32" />
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?thinsolenoid">On-axis field due to a thin shell solenoid</a>
+          </td></tr>
+        </table>
+      </dd>
+     <dd>
+        <table><tr><td>
+          <a href="./solenoids?solenoid">
+          <ndz_image type="svg" name="solenoid" file="solenoids/solenoid.svg" alt="On-axis field due to a solenoid" y="32" />
+          </a>
+          </td>
+          <td>
+          <a href="./solenoids?solenoid">On-axis field due to a solenoid</a>
+          </td></tr>
+        </table>
+      </dd>
+    </dl>
+  </ndz_section>
+  <ndz_section title="Off-Axis Magnetic Field Formulas">
+    <dl>
+     <dd>
+        <table><tr><td>
+          <a href="./offaxis?offaxisloop">
+          <ndz_image type="svg" name="offaxisloop" file="offaxis/offaxisloop.svg" alt="Off-axis field due to a current loop" y="32" />
+          </a>
+          </td>
+          <td>
+          <a href="./offaxis?offaxisloop">Off-axis field due to a current loop</a>
+          </td></tr>
+        </table>
+      </dd>
+    </dl>
+  </ndz_section>
+</ndz_document>

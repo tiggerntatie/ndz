@@ -1,0 +1,1 @@
+../../../smarty_templates_default/index.tpl

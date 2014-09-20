@@ -1,0 +1,26 @@
+<ndz_document>
+  <ndz_title>Field Due to an Infinite Straight Current Filament</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>02/26/2004</ndz_date>
+  <ndz_abstract>
+  This simple formula can be derived directly from Maxwell's fourth 
+  equation, or Ampere's Law.
+  </ndz_abstract>
+  <ndz_section type="picture">
+    <ndz_image type="svg" name="straightwire" file="straightwire.svg" alt="Field due to an infinite straight wire" />
+  </ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation1" alt="field due to an infinite straight wire">
+      B=\frac{\mu_oi}{2\pi r}
+    </ndz_image>
+    <p>
+    <b>B</b> is the magnetic field, in teslas. The direction of the field is 
+    tangent to a circle on a radius <b>r</b> (in meters) from the wire.
+    <p>
+    <b>&mu;<sub>o</sub></b> is the permeability constant (1.26x10<sup>-6</sup> H/m)
+    </p>
+    <p>
+    <b>i</b> is the current in the wire, in amperes.
+    </p>
+  </ndz_section>  
+</ndz_document>

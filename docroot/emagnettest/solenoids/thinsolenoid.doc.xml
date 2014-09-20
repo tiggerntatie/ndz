@@ -1,0 +1,53 @@
+<ndz_document>
+  <ndz_title>On-Axis Field of a Finite, Straight, Thin Shell Solenoid</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>03/09/2004</ndz_date>
+  <ndz_abstract>
+  This formula uses the formula for the field due to a 
+  <a href="?currloop">current loop</a>, integrated over a range of axial 
+  displacements to obtain the magnetic field at any point on the axis of 
+  a finite, thin shell solenoid.
+  </ndz_abstract>
+  <ndz_section type="picture" title="Solenoid in cross section view">
+    <ndz_image type="svg" name="thinsolenoid" file="thinsolenoid.svg" alt="Solenoid in cross section view" />
+  </ndz_section>
+  <ndz_section type="eqn" title="General Case">
+    <ndz_image type="tex" name="equation1" alt="Field inside a thin shell solenoid">
+      B=\frac{\mu_oiN}{2l}\left[\frac{x_2}{\sqrt{{x_2}^2+r^2}}-\frac{x_1}
+      {\sqrt{{x_1}^2+r^2}}\right]
+    </ndz_image>
+  <p>
+  <b>B</b> is the magnetic field, in teslas, at any point on the axis of 
+  the solenoid. The direction of the field is parallel to the solenoid axis.
+  </p>
+  <p>
+  <b>&mu;<sub>o</sub></b> is the permeability constant (1.26x10-6 H/m)
+  </p>
+  <p>
+  <b>i</b> is the current in the wire, in amperes.
+  </p>
+  <p>
+  <b>N</b> is the total number of turns of wire in the solenoid.
+  </p>
+  <p>
+  <b>l</b> is the length of the solenoid, in meters.
+  </p>
+  <p>
+  <b>r</b> is the radius of the solenoid, in meters.
+  </p>
+  <p>
+  <b>x<sub>1</sub></b> and <b>x<sub>2</sub></b> are the distances, on axis, 
+  from the ends of the solenoid to the magnetic field measurement point, 
+  in meters.  
+  </p>
+  </ndz_section>  
+  <ndz_section type="eqn" title="Special Case">
+    <ndz_image type="tex" name="equation2" alt="Field at the center of a thin shell solenoid">
+      B=\frac{\mu_oiN}{\sqrt{l^2+4r^2}}
+    </ndz_image>
+  <p>
+  The magnetic field measurement point is at the center of the solenoid.
+  </p>
+  </ndz_section>
+  
+</ndz_document>

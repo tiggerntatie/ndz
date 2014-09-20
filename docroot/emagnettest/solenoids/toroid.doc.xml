@@ -1,0 +1,31 @@
+<ndz_document>
+  <ndz_title>Field Inside an Air-Core Toroid Coil</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>03/01/2004</ndz_date>
+  <ndz_abstract>
+  This simple formula can be derived directly from Maxwell's fourth 
+  equation, or Ampere's Law.
+  </ndz_abstract>
+  <ndz_section type="picture">
+    <ndz_image type="svg" name="toroid" file="toroid.svg" alt="Field inside an air core toroid" />
+  </ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation1" alt="Field inside an air core toroid">
+      B=\frac{\mu_oiN}{2\pi r}
+    </ndz_image>
+    <p>
+    <b>B</b> is the magnetic field, in teslas. The direction of the field 
+    is tangent to a circle on a radius <b>r</b> (in meters) from the 
+    center of the toroid.
+    </p>
+    <p>
+    <b>&mu;<sub>o</sub></b> is the permeability constant (1.26x10<sup>-6</sup> H/m)
+    </p>
+    <p>
+    <b>i</b> is the current in the wire, in amperes.
+    </p>
+    <p>
+    <b>N</b> is the total number of turns of wire in the toroid.
+    </p>
+  </ndz_section>  
+</ndz_document>

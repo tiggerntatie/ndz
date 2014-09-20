@@ -1,0 +1,32 @@
+<ndz_document>
+  <ndz_title>The Law of Biot Savart</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>02/23/2004</ndz_date>
+  <ndz_abstract>
+  This handy little law is the foundation upon which most of the air core
+  coil formulas in this site are based.
+  </ndz_abstract>
+  <ndz_section type="picture" >
+    <ndz_image type="svg" name="biotsavart" file="biotsavart.svg" alt="The Law of Biot Savart" />
+  </ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation1" alt="The Law of Biot Savart">
+      d\textbf{B}=\frac{\mu_oi}{4\pi}\frac{d\textbf{l}\sin\theta}{r^2}
+    </ndz_image>
+  </ndz_section>
+  <ndz_section>
+    The current element d<b>l</b> on a current filament with current i
+    contributes a magnetic field, d<b>B</b>, in a direction normal to 
+    the plane formed by d<b>l</b> and the vector <b>r</b>.
+    <p/>
+    The good news is that by solving this integral for an arbitrary 
+    configuration of current filaments (like a coil, or set of coils) you 
+    can compute the magnetic field vector at any point in space.
+    <p/>
+    The bad news is that there is no closed solution to this integral for 
+    most interesting configurations of current filaments and vectors 
+    <b>r</b>.
+    <p/>
+    Oh well.
+  </ndz_section>  
+</ndz_document>

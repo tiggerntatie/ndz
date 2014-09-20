@@ -1,0 +1,130 @@
+<ndz_document>
+  <ndz_title>On-Axis Field of a Finite Solenoid</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>03/11/2004</ndz_date>
+  <ndz_abstract>
+  This formula uses the formula for the field due to a 
+  <a href="?thinsolenoid">thin shell solenoid</a>, 
+  integrated over a range of radii to obtain the magnetic field at any 
+  point on the axis of a finite solenoid.
+  </ndz_abstract>
+  <ndz_section type="picture" title="Solenoid in cross section view">
+    <ndz_image type="svg" name="solenoid" file="solenoid.svg" alt="Solenoid in cross section view" />
+  </ndz_section>
+  <ndz_section type="eqn" title="General Case">
+    <ndz_image type="tex" name="equation1" alt="Field inside a solenoid">
+    B=\frac{\mu_oin}{2(r_2-r_1)}\left[x_2\ln\frac{\sqrt{r_2^2+x_2^2}+r_2}
+    {\sqrt{r_1^2+x_2^2}+r_1}-x_1\ln\frac{\sqrt{r_2^2+x_1^2}+r_2}
+    {\sqrt{r_1^2+x_1^2}+r_1}\right]
+    </ndz_image>
+  <p>
+  <b>B</b> is the magnetic field, in teslas, at any point on the axis of 
+  the solenoid. The direction of the field is parallel to the solenoid axis.
+  </p>
+  <p>
+  <b>&mu;<sub>o</sub></b> is the permeability constant (1.26x10<sup>-6</sup>
+  H/m or Tm/A, 1.26x10<sup>-4</sup> Tcm/A or 4.95x10<sup>-5</sup> Tin/A for
+  coils measured in meters, centimeters and inches, respectively)
+  </p>
+  <p>
+  <b>i</b> is the current in the wire, in amperes.
+  </p>
+  <p>
+  <b>n</b> is the number of turns of wire per unit length in the solenoid.
+  </p>
+  <p>
+  <b>r<sub>1</sub></b> is the inside radius of the solenoid.
+  </p>
+  <p>
+  <b>r<sub>2</sub></b> is the outside radius of the solenoid.
+  </p>
+  <p>
+  <b>x<sub>1</sub></b> and <b>x<sub>2</sub></b> are the distances, on axis, 
+  from the ends of the solenoid to the magnetic field measurement point.  
+  </p>
+  <p>
+  Note that the units of length may be meters, centimeters or inches (or 
+  furlongs for that matter), as long as the correct value of the permeability
+  constant is used.
+  </p>
+  </ndz_section>  
+  <ndz_section type="eqn" title="The G Factor">
+  <p>
+  The field can be expressed in a form that separates the unit system, power
+  and winding configuration from the unit-less geometry of the coil.  This
+  introduces the "G Factor":
+  </p>
+    <ndz_image type="tex" name="equation2" alt="G factor form of axial field due to a solenoid">
+      B=\mu_oG\sqrt{\frac{P\lambda}{r_1\rho}}
+    </ndz_image>
+  <p>
+  where <b>G</b> is the unitless geometry factor:
+  </p>
+    <ndz_image type="tex" name="equation3" alt="G factor for a solenoid">
+      G=\sqrt{\frac{1}{8\pi\beta(\alpha^2-1)}}\left[
+        (\gamma+\beta)\ln\frac{\alpha+\sqrt{\alpha^2+(\gamma+\beta)^2}}
+          {1+\sqrt{1+(\gamma+\beta)^2}} - 
+        (\gamma-\beta)\ln\frac{\alpha+\sqrt{\alpha^2+(\gamma-\beta)^2}}
+          {1+\sqrt{1+(\gamma-\beta)^2}} 
+      \right]
+    </ndz_image>
+  <p>
+  where,
+  </p>
+    <ndz_image type="tex" name="equation4" alt="definitions for G">
+      \alpha=\frac{r_2}{r_1} \text{\hspace{20pt},\hspace{20pt} }
+      \beta=\frac{l}{2r_1} \text{ \hspace{20pt}and\hspace{20pt} }
+      \gamma=\frac{x_1+x_2}{2r_1} 
+    </ndz_image>
+  <p>
+  <b>P</b> is the total power consumed by the coil, in watts.
+  </p>
+  <p>
+  <b>&lambda;</b> is equal to the total conductor cross section area divided
+  by the total coil cross section area, which ranges from 0.6 to 0.8 in 
+  typical coils.
+  </p>
+  <p>
+  <b>&rho;</b> is the conductor resistivity, in units of ohms-length.  The 
+  length units must match those of <b>r<sub>1</sub></b>.
+  </p>
+  </ndz_section>
+  <ndz_section title="Special Case: x<sub>1</sub>=(-x<sub>2</sub>)">
+  <p>
+  When the magnetic field measurement point is at the center of the solenoid:
+  </p>
+    <ndz_image type="tex" name="equation5" alt="B at the coil center">
+      B=\frac{\mu_oiN}{2(r_2-r_1)}\ln\frac{\sqrt{r_2^2+(l/2)^2}+r_2}
+        {\sqrt{r_1^2+(l/2)^2}+r_1}
+    </ndz_image>
+  <p>
+  or...
+  </p>
+    <ndz_image type="tex" name="equation6" alt="B at the coil center, alternate form">
+      B=\frac{\mu_ojl}{2}\ln\frac{\sqrt{r_2^2+(l/2)^2}+r_2}
+        {\sqrt{r_1^2+(l/2)^2}+r_1}
+    </ndz_image>
+  <p>
+  <b>j</b> is the bulk current density in the coil cross section, in amps
+  per unit area.
+  </p>
+  <p>
+  <b>l</b> is the length of the solenoid.
+  </p>
+  <p>
+  <b>N</b> is the total number of turns of wire in the coil.
+  </p>
+  <p>
+  The unitless geometry factor G is simply:
+  </p>
+    <ndz_image type="tex" name="equation7" alt="G factor for measuring B at coil center">
+      G=\sqrt{\frac{\beta}{2\pi(\alpha^2-1)}}
+      \ln\frac{\alpha+\sqrt{\alpha^2+\beta^2}}{1+\sqrt{1+\beta^2}}
+    </ndz_image>
+  <p>
+  Note that <b>G</b> is maximum when &alpha;=3 and &beta;=2.  A coil built
+  with a given inner diameter and input power will deliver the highest central
+  field strength when these conditions are met.
+  </p>
+  </ndz_section>
+</ndz_document>

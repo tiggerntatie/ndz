@@ -1,0 +1,85 @@
+<ndz_document>
+  <ndz_title>Maxwell's Equations</ndz_title>
+  <ndz_author>Eric Dennison</ndz_author>
+  <ndz_date>02/22/2004</ndz_date>
+  <ndz_abstract>
+  Wherever you go.  Whatever you do.  Make sure you don't try to build
+  something that doesn't agree with these little gems.
+  </ndz_abstract>
+  <ndz_section type="eqnno">I</ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation1" alt="Gauss's Law for Electricity">
+    \epsilon_o \oint \kappa \textbf{E} \cdot d\textbf{S} = q
+    </ndz_image>
+  </ndz_section>
+  <ndz_section type="eqndesc">
+    Gauss's Law for Electricity. The surface integral of electric field 
+    over any closed surface is proportional to the enclosed charge. The k 
+    factor is the dielectric constant, equal to 1 in free space.
+  </ndz_section>
+  <ndz_section type="eqnno">II</ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation2" alt="Gauss's Law for Magnetism">
+    \oint \textbf{B} \cdot d\textbf{S} = 0
+    </ndz_image>
+  </ndz_section>
+  <ndz_section type="eqndesc">
+    Gauss's Law for Magnetism. The integral of magnetic flux density over 
+    any closed surface is zero. This is the mathematical expression of the 
+    fact that no magnetic monopoles have ever been discovered.
+  </ndz_section>
+  <ndz_section type="eqnno">III</ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation3" alt="Faraday's Law of Induction">
+    \oint \textbf{E} \cdot d\textbf{l} = - \frac{d\Phi_B}{dt}
+    </ndz_image>
+  </ndz_section>
+  <ndz_section type="eqndesc">
+    Faraday's Law of Induction. The line integral of electric field over 
+    any closed path is proportional to the rate of change of magnetic flux 
+    in the enclosed region.
+  </ndz_section>
+  <ndz_section type="eqnno">IV</ndz_section>
+  <ndz_section type="eqn">
+    <ndz_image type="tex" name="equation4" alt="Ampere's Law">
+    \oint \frac{1}{\kappa_m}\textbf{B} \cdot d\textbf{l} = 
+    \mu_o \left( \epsilon_o \frac{d\Phi_E}{dt}+i \right)
+    </ndz_image>
+  </ndz_section>
+  <ndz_section type="eqndesc" name="lastdesc">
+    Ampere's Law (as extended by Maxwell). The line integral of magnetic 
+    flux density over any closed path is proportional to the rate of change 
+    of electric field and electric current in the enclosed region. The &kappa;
+    <sub>m</sub> factor is the relative permeability, equal to 1 in free space.
+  </ndz_section>
+  <ndz_section title="Those Little Constants">
+  All of the preceding equations work with units of meters, seconds, teslas 
+  (units of induced magnetic flux density, commonly referred to as "magnetic 
+  field" or "field"), webers (units of induced magnetic flux), amperes, 
+  volts and coulombs. The constants have the following values:
+  <table class="constdef">
+  <tr>
+    <td class="constname">
+      &epsilon;<sub>o</sub>
+    </td>
+    <td class="constvalue">
+      8.85 x 10<sup>-12</sup> F/m
+    </td>
+    <td class="constdef">
+      Permittivity constant
+    </td>
+  </tr>
+  <tr>
+    <td class="constname">
+      &mu;<sub>o</sub>
+    </td>
+    <td class="constvalue">
+      1.26 x 10<sup>-6</sup> H/m<br/>(exactly 4&pi; x 10<sup>-7</sup>)
+    </td>
+    <td class="constdef">
+      Permeability constant
+    </td>
+  </tr>
+  </table>
+  </ndz_section>
+</ndz_document>

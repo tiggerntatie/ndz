@@ -1,0 +1,1032 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>phpTidyHt Manual</title>
+    <meta name="GENERATOR" content=
+    "Modular DocBook HTML Stylesheet Version 1.71 ">
+  </head>
+
+  <body class="ARTICLE" bgcolor="#FFFFFF" text="#000000" link=
+  "#0000FF" vlink="#840084" alink="#0000FF">
+    <div class="ARTICLE">
+      <div class="TITLEPAGE">
+        <h1 class="TITLE"><a name="AEN2">phpTidyHt Manual</a></h1>
+
+        <h3 class="AUTHOR"><a name="AEN4" href="http://www.gemini1consulting.com/dcd/">David Druffner</a></h3>
+
+        <div class="AFFILIATION">
+          <div class="ADDRESS">
+            <p class="ADDRESS">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddruff@gemini1consulting.com<br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          </div>
+        </div>
+
+        <p class="COPYRIGHT">Copyright &copy; 2001 by <a href="http://www.gemini1consulting.com/dcd/">David C.
+        Druffner</a></p>
+
+        <div class="REVHISTORY">
+          <table width="100%" border="0">
+            <tr>
+              <th align="LEFT" valign="TOP" colspan="3"><b>Revision
+              History</b></th>
+            </tr>
+
+            <tr>
+              <td align="LEFT">Revision v. 1.0.1.0</td>
+
+              <td align="LEFT">10-26-2001</td>
+
+              <td align="LEFT">Revised by: dcd</td>
+            </tr>
+
+            <tr>
+              <td align="LEFT" colspan="3">Manual for v.1.0 of
+              phpTidyHt</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <div class="ABSTRACT">
+            <a name="AEN16"></a>
+
+            <p>Manual for <tt class="FUNCTION">phpTidyHt</tt>, a
+            PHP function to filter HTML output through <a href=
+            "http://www.w3c.org/People/Raggett/tidy/" target=
+            "_top">HTML Tidy</a>. Download updates to this manual
+            and to <tt class="FUNCTION">phpTidyHt</tt> at <a href=
+            "http://www.gemini1consulting.com/tekhelp/" target=
+            "_top">Gemini 1 Consulting, LLC</a>. An online manual
+            has also been set up which displays users comments,
+            modifications, and tips, as well as any author comments
+            since this manual was published. Please visit the <a
+            href=
+            "http://www.gemini1consulting.com/tekhelp/online_manuals/phptidyht/html/"
+             target="_top">Online Manual</a>. page to see the
+            latest comments and/or to contribute yourself.</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <div class="TOC">
+        <dl>
+          <dt><b>Table of Contents</b></dt>
+
+          <dt>1. <a href="#INTRO">Introduction</a></dt>
+
+          <dd>
+            <dl>
+              <dt>1.1. <a href="#MANUALVERSION">Manual
+              Version</a></dt>
+
+              <dt>1.2. <a href="#OVERVIEW">What is
+              phpTidyHt?</a></dt>
+
+              <dt>1.3. <a href="#HTMLTIDY">What is HTML
+              Tidy?</a></dt>
+
+              <dt>1.4. <a href="#COPYRIGHT">Copyright
+              Information</a></dt>
+
+              <dt>1.5. <a href="#DISCLAIMER">Disclaimer</a></dt>
+
+              <dt>1.6. <a href="#SOFTWARELICENSE">phpTidyHt
+              License</a></dt>
+
+              <dt>1.7. <a href="#NEWVERSIONS">New Versions</a></dt>
+
+              <dt>1.8. <a href="#CREDITS">Credits</a></dt>
+
+              <dt>1.9. <a href="#FEEDBACK">Feedback</a></dt>
+
+              <dt>1.10. <a href=
+              "#TRANSLATIONS">Translations</a></dt>
+            </dl>
+          </dd>
+
+          <dt>2. <a href="#DOWNLOAD">Download phpTidyHt</a></dt>
+
+          <dt>3. <a href="#SYSTEMREQUIREMENTS">System
+          Requirements</a></dt>
+
+          <dt>4. <a href="#FUNCTIONDESCRIPTION">Function
+          Description</a></dt>
+
+          <dt>5. <a href="#SCRIPTUSE">Using phpTidyHt</a></dt>
+
+          <dd>
+            <dl>
+              <dt>5.1. <a href="#OUTPUTBUFFERING">Using Output
+              Buffering - Method 1</a></dt>
+
+              <dt>5.2. <a href="#HTMLSTRINGBUILD">HTML String Build
+              - Method 2</a></dt>
+
+              <dt>5.3. <a href="#DEBUGGING">Debugging Scripts with
+              phpTidyHt</a></dt>
+
+              <dt>5.4. <a href="#INTEGRATING">Integrating phpTidyHt
+              Into Your Scripts</a></dt>
+
+              <dt>5.5. <a href="#OPTIONS">phpTidyHt
+              Options</a></dt>
+            </dl>
+          </dd>
+
+          <dt>6. <a href="#DEMO">Demo Page</a></dt>
+
+          <dt>7. <a href="#CODEHISTORY">Code History</a></dt>
+
+          <dt>8. <a href="#CONTRIBUTIONS">Code
+          Contributions</a></dt>
+
+          <dt>9. <a href="#MOREINFO">Further Information</a></dt>
+        </dl>
+      </div>
+
+      <div class="SECT1">
+        <h1 class="SECT1"><a name="INTRO">1. Introduction</a></h1>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="MANUALVERSION">1.1. Manual
+          Version</a></h2>
+
+          <p>This document is version 1.0.1.0 The document version
+          number is in S.S.M.M format. S.S. will always match the
+          version of the software and M.M. will indicate the
+          release of the manual relating to that version.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="OVERVIEW">1.2. What is
+          phpTidyHt?</a></h2>
+
+          <p><span class="APPLICATION">phpTidyHt</span> is a <a
+          href="http://www.php.net" target="_top">PHP</a> script
+          which allows you to filter all your PHP generated HTML
+          through <a href="http://www.w3c.org/People/Raggett/tidy/"
+          target="_top">HTML Tidy</a> before it is sent to the
+          browser. Thus you have the advantage of automatically
+          fixing most HTML errors on the fly, presenting a nicely
+          formatted source to the browser, optionally converting
+          the output to XHTML automatically, and obtaining useful
+          information for debugging HTML source.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="HTMLTIDY">1.3. What is HTML
+          Tidy?</a></h2>
+
+          <p>If you are not familiar with <a href=
+          "http://www.w3c.org/People/Raggett/tidy/" target=
+          "_top">HTML Tidy</a>, it is a VERY useful command line
+          utility that outputs correctly formed HTML (and
+          optionally indents it nicely) from badly formed HTML (it
+          takes the input and automatically fixes it and sends it
+          to the screen or a file which you designate). Any HTML
+          coding errors which it was able to fix are called
+          "warnings" and any which it was not able to fix are
+          called "errors". The errors and warnings can either be
+          sent to the screen (useful for debugging), to a file, or
+          both. <span class="APPLICATION">HTML Tidy</span> has been
+          ported to a variety of operating systems, including Linux
+          and most versions of Windows.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="COPYRIGHT">1.4. Copyright
+          Information</a></h2>
+
+          <p><span class="TRADEMARK">&#13; This document is
+          copyrighted</span> &copy; 2001 <a href=
+          "http://www.gemini1consulting.com/dcd/" target="_top">David
+          C. Druffner</a> and is distributed under the terms of the
+          license, stated below.</p>
+
+          <p>This manual may be reproduced and distributed in whole
+          or in part, in any medium physical or electronic, as long
+          as this copyright notice is retained on all copies.
+          Commercial redistribution is allowed and encouraged;
+          however, this copyright notice must appear prominently in
+          the work and this author would like to be notified at the
+          following email address: <tt class="EMAIL">&lt;<a href=
+          "mailto:ddruff@gemini1consulting.com">ddruff@gemini1consulting.com</a>&gt;</tt>
+          prior to any such commercial distributions.</p>
+
+          <p>All translations, derivative works, or aggregate works
+          incorporating this manual must be covered under this
+          copyright notice. That is, you may not produce a
+          derivative work from this manual and impose additional
+          restrictions on its distribution. Exceptions to these
+          rules may be granted under certain conditions; please
+          contact the <a href="mailto:ddruff@gemini1consulting.com"
+          target="_top">author</a>.</p>
+
+          <p><em>Modifications:</em> Any significant modifications
+          (anything other than the correction of typos) to this
+          document must be identified on the title page in the
+          revision section of this document with the name and
+          contact information of each author appearing next to each
+          revision.</p>
+
+          <p>If you have any questions, please contact <a href=
+          "mailto:ddruff@gemini1consulting.com" target="_top">David
+          Druffner</a></p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="DISCLAIMER">1.5.
+          Disclaimer</a></h2>
+
+          <p>No liability for the contents of this document can be
+          accepted. Use the concepts, examples and other content at
+          your own risk. There may be errors and inaccuracies, that
+          may of course be damaging to your system. Proceed with
+          caution, and although this is highly unlikely, the
+          author(s) do not take any responsibility for that.</p>
+
+          <p>All copyrights are held by their by their respective
+          owners, unless specifically noted otherwise. Use of a
+          term in this document should not be regarded as affecting
+          the validity of any trademark or service mark.</p>
+
+          <p>Naming of particular products or brands should not be
+          seen as endorsements.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="SOFTWARELICENSE">1.6.
+          phpTidyHt License</a></h2>
+
+          <p>The phpTidyHt script carries the following license
+          which is GPL compatible and modeled on the modified BSD
+          licsense (for GNU descriptions of various license types
+          see the <a href=
+          "http://www.gnu.org/licenses/license-list.html" target=
+          "_top">GNU License Page</a>):</p>
+
+          <p>Redistribution and use in source and binary forms,
+          with or without modification, are permitted provided that
+          the following conditions are met:</p>
+
+          <p>1.Redistributions of source code must retain the above
+          copyright notice, this list of conditions and the
+          following disclaimer.</p>
+
+          <p>2.Redistributions in binary form must reproduce the
+          above copyright notice, this list of conditions and the
+          following disclaimer in the documentation and/or other
+          materials provided with the distribution.</p>
+
+          <p>3.The name of the author may not be used to endorse or
+          promote products derived from this software without
+          specific prior written permission.</p>
+
+          <p>&#13;THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS''
+          AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+          EVENT SHALL THE AUTHOR, ANY DISTRIBUTOR, OR ANY DOWNLOAD
+          HOSTING COMPANY BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+          (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+          GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+          BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+          OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+          WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+          THE POSSIBILITY OF SUCH DAMAGE.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="NEWVERSIONS">1.7. New
+          Versions</a></h2>
+
+          <p>The latest version of this document, which will be
+          made available in a variety of formats, including plain
+          text, HTML (tarred and zipped), Single HTMl, Adobe
+          Acrobate PDF, and the SGML source, can be found at the <a
+          href=
+          "http://www.gemini1consulting.com/tekhelp/phptidyht/docs/"
+           target="_top">phpTidyHt Document Page</a>.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="CREDITS">1.8. Credits</a></h2>
+
+          <p>In this version I have the pleasure of
+          acknowledging:</p>
+
+          <ul>
+            <li>
+              <p><em><a href="http://www.gemini1consulting.com"
+              target="_top">Gemini 1 Consulting, LLC</a></em> for
+              support during the development of this script and for
+              providing the resources to host the <tt class=
+              "FUNCTION">phpTidyHt</tt>'s documentation page.
+              Gemini 1 Consulting, LLC is the developer of <span
+              class="TRADEMARK">GemTrend</span>&trade;, a Windows
+              based Building Controls Software application, and
+              other innovative software products.</p>
+            </li>
+
+            <li>
+              <p><em>Dave Raggett</em>, the developer of <a href=
+              "http://www.w3.org/People/Raggett/tidy/" target=
+              "_top">HTML Tidy</a> , a great program.</p>
+            </li>
+
+            <li>
+              <p><em><a href="http://www.sourceforge.net" target=
+              "_top">SourceForge</a></em>, the host of <tt class=
+              "FUNCTION">phpTidyHt</tt>'s download and development
+              page.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="FEEDBACK">1.9.
+          Feedback</a></h2>
+
+          <p>Feedback is most certainly welcome for this document.
+          Without your submissions and input, this document
+          wouldn't exist. An <a href=
+          "http://www.gemini1consulting.com/tekhelp/online_manuals/phptidyht/html/"
+           target="_top">online manual</a> has been set up to allow
+          you to submit comments for all to read and for
+          consideration for incorporation into the next version of
+          this manual.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="TRANSLATIONS">1.10.
+          Translations</a></h2>
+
+          <p>Translations of this document are welcome. Please use
+          the SGML Source, or failing that, the HTML or text
+          version, all of which are found at the <a href=
+          "http://www.gemini1consulting.com/tekhelp/phptidyht/docs/"
+           target="_top">document page</a>. Translations can be
+          emailed to <a href="mailto:ddruff@gemini1consulting.com"
+          target="_top">David Druffner</a>.</p>
+        </div>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="DOWNLOAD">2. Download
+        phpTidyHt</a></h1>
+
+        <p>The latest version of <tt class=
+        "FUNCTION">phpTidyHt</tt> can be found on the Sourceforge
+        <a href="http://sourceforge.net/projects/phptidyht/"
+        target="_top">phpTidyHt Project Page</a> and at <a href=
+        "http://www.gemini1consulting.com/tekhelp/" target=
+        "_top">Gemini 1 Consulting, LLC</a>. It is currently
+        available only in tar.gz format. When untarred it should
+        contain the following files:</p>
+
+        <ol type="1">
+          <li>
+            <p><tt class="FILENAME">phptidyht.php</tt> <em>(the
+            phpTidyHt script)</em></p>
+          </li>
+
+          <li>
+            <p><tt class="FILENAME">phptidyht_demo.php</tt>
+            <em>(the phpTidyHt demo script</em>)</p>
+          </li>
+
+          <li>
+            <p><tt class="FILENAME">images/</tt> <em>(images for
+            html)</em></p>
+          </li>
+
+          <li>
+            <p><tt class="FILENAME">html/</tt> <em>(contains manual
+            html file)</em></p>
+          </li>
+
+          <li>
+            <p><tt class=
+            "FILENAME">html/phptidyht_manual_big.html</tt> <em>(the
+            phpTidyHt manual in html)</em></p>
+          </li>
+
+          <li>
+            <p><tt class="FILENAME">readme.txt</tt> <em>(license,
+            info)</em></p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="SYSTEMREQUIREMENTS">3. System
+        Requirements</a></h1>
+
+        <p></p>
+
+        <ol type="1">
+          <li>
+            <p><em><a href="http://www.php.net" target="_top">PHP
+            4</a></em> (it should work with some modification on
+            PHP3 but I haven't tested it)</p>
+          </li>
+
+          <li>
+            <p>A <em>Unix/Linux Operating System</em>. With some
+            modification, it probably will work on Windows 95/98/NT
+            systems. I will probably make these modifications in a
+            later version. This version was tested on a Mandrake
+            7.2 OS with Apache.</p>
+          </li>
+
+          <li>
+            <p>The web server must allow <em>system calls</em>.If
+            in safe mode, it won't allow this unless the safe mode
+            directory option has been enabled, and then only for
+            system calls to commands that are in the safe mode
+            directory. If your administrator is using safe mode,
+            ask him to put <span class="APPLICATION">HTML
+            Tidy</span> in the safe mode directory. See the <a
+            href="http://www.php.net" target="_top">PHP Manual</a>
+            for details.</p>
+          </li>
+
+          <li>
+            <p>The ability to read and write to the temporary file
+            defined by <tt class="VARNAME">$tidy_temp_file</tt>.
+            This means you must set the file permissions (using <b
+            class="COMMAND">chmod</b>) for the directory which <tt
+            class="VARNAME">$tidy_temp_file</tt> uses to allow the
+            owner of the server process (usually "nobody", "www",
+            "apache" or "httpd" - do a <b class="COMMAND">ps</b>
+            <tt class="USERINPUT"><b>-ef | grep httpd</b></tt> to
+            find out). If you are operating on a remote server you
+            may need telnet access to do this, although some ftp
+            clients allow you to set permissions.</p>
+          </li>
+
+          <li>
+            <p><em><a href=
+            "http://www.w3c.org/People/Raggett/tidy/" target=
+            "_top">HTML Tidy</a></em> must be installed on the
+            server, in the server's command path, and its
+            permissions must allow the owner of the httpd process
+            (usually nobody,www, apache or httpd) to execute
+            it.</p>
+          </li>
+        </ol>
+        <br>
+        <br>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="FUNCTIONDESCRIPTION">4. Function
+        Description</a></h1>
+
+        <p>The <tt class="FUNCTION">phpTidyHt</tt> script is
+        comprised of several functions, the primary one of which is
+        <tt class="FUNCTION">phpTidyHt</tt>. The proper format of
+        the <tt class="FUNCTION">phpTidyHt</tt> function is:</p>
+
+        <div class="FUNCSYNOPSIS">
+          <a name="AEN177"></a>
+
+          <p><code><code class="FUNCDEF">boolean <b class=
+          "FSFUNC">phpTidyHt</b></code>( string <var class=
+          "PDPARAM">$web_page</var>, constant<var class=
+          "PDPARAM">__FILE__</var>, constant<var class=
+          "PDPARAM">__LINE__</var>);</code></p>
+        </div>
+        <br>
+        <br>
+
+        <p>&#13;Where:</p>
+
+        <ul>
+          <li>
+            <p><tt class="VARNAME">$web_page</tt> contains all of
+            the HTML of the web page being sent to the browser.</p>
+          </li>
+
+          <li>
+            <p><tt class="CONSTANT">__FILE__</tt> and <tt class=
+            "CONSTANT">__LINE__</tt> are the pre-defined PHP
+            constants which give the file name and line number of
+            the line calling the function</p>
+          </li>
+
+          <li>
+            <p>the return type is true on success, or false on
+            failure (caused by <span class="APPLICATION">HTML
+            Tidy</span> being unable to produce valid HTML output
+            because of bad HTML code in <tt class=
+            "VARNAME">$web_page</tt> which it was unable to
+            fix)</p>
+          </li>
+        </ul>
+
+        <div class="NOTE">
+          <table class="NOTE" width="100%" border="0">
+            <tr>
+              <td width="25" align="CENTER" valign="TOP"><img src=
+              "../images/note.gif" hspace="5" alt="Note"></td>
+
+              <td align="LEFT" valign="TOP">
+                <p>Please note that there are two underscores on
+                each side of each constant, for further details on
+                these constants see the Constants section of the <a
+                href="http://www.php.net" target="_top">PHP
+                manual</a>. <tt class="FUNCTION">phpTidyHt</tt>
+                uses these constants to identify the sections of
+                PHP code which is generating the HTML page and any
+                <span class="APPLICATION">HTML Tidy</span> errors
+                associated with it. The file and line number of the
+                code is added to the identification banner in the
+                error log file.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="SCRIPTUSE">5. Using
+        phpTidyHt</a></h1>
+
+        <p>A typical active page is built from a hodgepodge of
+        functions, conditional statements, database calls,
+        variables, and hard coded HTML. As a result, PHP scripts
+        often produce HTML source that is hard to read when you
+        select "view source" on your browser, hard to validate, and
+        hard to debug.</p>
+
+        <p>The solution to this mess is to fix your HTML on the fly
+        with <span class="APPLICATION">HTML Tidy</span> and <tt
+        class="FUNCTION">phpTidyHt</tt>. After integrating the
+        function into your script (see the <a href=
+        "#INTEGRATING">Integrating</a> section), you can filter
+        your output through phptidyht using one of two methods:</p>
+
+        <ol type="1">
+          <li>
+            <p><a href="#OUTPUTBUFFERING">With output buffering</a>
+            (the <em>preferred</em> method) OR</p>
+          </li>
+
+          <li>
+            <p><a href="#HTMLSTRINGBUILD">By building your web
+            page</a>, collecting all of your output into a string
+            variable <em>first</em>, then send it to the browser
+            with phptidyht.</p>
+          </li>
+        </ol>
+        <br>
+        <br>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="OUTPUTBUFFERING">5.1. Using
+          Output Buffering - Method 1</a></h2>
+
+          <p>Php 4 introduced <a href=
+          "http://www.php.net/manual/en/function.ob-start.php"
+          target="_top">Output Buffering</a>, which allows you to
+          build and process your output for an entire page before
+          sending it to the browser. It is relatively easy to
+          implement and has many advantages(including the
+          management of header output, easing the use of cookies).
+          Besides being used to manage header output however,
+          output buffering allows us to filter your entire web page
+          through phptidyht before it is sent to the browser
+          without having to change the way you write scripts (as
+          method 2 might require).</p>
+
+          <p>The basic concept of output buffering is that when it
+          is started using <a href=
+          "http://www.php.net/manual/en/function.ob-start.php"
+          target="_top">ob_start</a>, all output is sent to an
+          internal cache until the internal cache is flushed or, in
+          our case, sent to a variable using <a href=
+          "http://www.php.net/manual/en/function.ob-get-contents.php"
+           target="_top">ob_get_contents</a> , then filtered
+          through phptidyht by sending the variable as an argument
+          to phptidyht.</p>
+
+          <p>Use output buffering, unless you are using Php 3, then
+          use method 2, below.</p>
+
+          <p>The format of your code when using output buffering
+          should be as follows:</p>
+
+          <div class="INFORMALEXAMPLE">
+            <a name="AEN232"></a>
+
+            <table border="0" bgcolor="#E0E0E0" width="100%">
+              <tr>
+                <td>
+<pre class="PROGRAMLISTING">
+<font color="#000000"> 
+ &lt;?php
+ 
+ ob_start; //starts output buffering   
+ 
+ [Code generating HTML output]
+ 
+ $web_page=ob_get_contents();  //copy output buffer to $web_page variable
+ 
+ ob_end_clean();  //end output buffering
+ 
+ /* Filter contents of $web_page through phpTidyHt and echo to browser */
+ 
+ phpTidyHt($web_page, __FILE__, __LINE__);  
+ 
+  
+ </font>
+</pre>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <br>
+
+          <p>Here is an example:</p>
+
+          <div class="INFORMALEXAMPLE">
+            <a name="AEN235"></a>
+
+            <table border="0" bgcolor="#E0E0E0" width="100%">
+              <tr>
+                <td>
+<pre class="PROGRAMLISTING">
+<font color="#000000">  
+  &lt;?php
+  
+  /* Turns  Output Buffering On */
+  ob_start();
+  
+  ?&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;
+  Test page
+  &lt;/title&gt;
+  
+  &lt;?php
+  
+   echo "
+   &lt;/head&gt;
+   &lt;body&gt;
+   This is a test page
+   &lt;/body&gt;
+   &lt;/html&gt;";
+   
+   /* Copies output echoed in above lines from internal cache to variable */
+   
+   $web_page=ob_get_contents();  
+   ob_end_clean();  //end output buffering
+   
+   //Filter contents of $web_page through phpTidyHt and echo to browser
+   
+   phpTidyHt($web_page, __FILE__, __LINE__);  
+   
+   
+  </font>
+</pre>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <p>As you can see, with output buffering you don't need
+          to change the way you write scripts, you only need to add
+          a few extra lines of code.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="HTMLSTRINGBUILD">5.2. HTML
+          String Build - Method 2</a></h2>
+
+          <p>The second method is implemented by buiding a string
+          containing all HTML for the web page and <em>then</em>
+          sending the HTML to the browser. Here is an example
+          script excerpt of a traditional PHP page build which is
+          echoed to the browser:</p>
+
+          <div class="EXAMPLE">
+            <a name="AEN242"></a>
+
+            <p><b>Example 1. Traditional Method of Building a Web
+            Page and Echoing it to the Browser</b></p>
+
+            <table border="0" bgcolor="#E0E0E0" width="100%">
+              <tr>
+                <td>
+<pre class="PROGRAMLISTING">
+<font color=
+"#000000">&#13;$web_page="&lt;html&gt;&lt;title&gt;Guest Book&lt;/title&gt;&lt;head&gt;";
+$web_page.=getCss(); //adds css information generated from the function getCss();
+$web_page.=getJavascript(); //adds javascript information generated from function 
+$web_page.="&lt;/head&gt;&lt;body&gt;";
+$web_page.="Info for User $username&lt;br&gt;";
+$web_page.="&lt;table&gt;";
+$web_page.=getDatabaseInfo($user_name, $db_table); //get users info from function 
+$web_page.="&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;";
+echo $web_page;&#13;</font>
+</pre>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <p>To use Phptidyht, replace the <b class=
+          "COMMAND">echo</b> in Example 1 with a call to the <tt
+          class="FUNCTION">phpTidyHt</tt> function like this:</p>
+
+          <div class="EXAMPLE">
+            <a name="AEN248"></a>
+
+            <p><b>Example 2. Same as Example 1 but $web_page
+            Filtered Through phpTidyHt</b></p>
+
+            <table border="0" bgcolor="#E0E0E0" width="100%">
+              <tr>
+                <td>
+<pre class="PROGRAMLISTING">
+<font color=
+"#000000">&#13;$web_page="&lt;html&gt;&lt;title&gt;Guest Book&lt;/title&gt;&lt;head&gt;";
+$web_page.=getCss(); //adds css information generated from the function getCss();
+$web_page.=getJavascript(); //adds javascript information generated from function 
+$web_page.="&lt;/head&gt;&lt;body&gt;";
+$web_page.="Info for User $username&lt;br&gt;";
+$web_page.="&lt;table&gt;";
+$web_page.=getDatabaseInfo($user_name, $db_table); //get users info from function 
+$web_page.="&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;";
+<em>phpTidyHt($web_page, __FILE__, __LINE__);</em>&#13;</font>
+</pre>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <br>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="DEBUGGING">5.3. Debugging
+          Scripts with phpTidyHt</a></h2>
+
+          <div class="TIP">
+            <table class="TIP" width="100%" border="0">
+              <tr>
+                <td width="25" align="CENTER" valign="TOP"><img
+                src="../images/tip.gif" hspace="5" alt="Tip"></td>
+
+                <td align="LEFT" valign="TOP">
+                  <p>&#13;Besides using <tt class=
+                  "FUNCTION">phpTidyHt</tt> for tidying up your
+                  HTML output, it is very useful for debugging your
+                  HTML source. You can log all HTML errors to the
+                  error log and use the log for reference when
+                  fixing your HTML code so that it conforms to HTML
+                  or XML standards. The log will contain
+                  information on all HTML errors and how to fix
+                  them and a banner identifying the PHP code
+                  section in your scripts which is producing the
+                  offending HTML. In addition to (or instead of)
+                  logging the errors to the log file, you can
+                  choose to have <tt class=
+                  "FUNCTION">phpTidyHt</tt> echo the errors
+                  directly to your browser when the page is
+                  accessed. Thus when you are test your site the
+                  errors will be obvious when encountered.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="INTEGRATING">5.4. Integrating
+          phpTidyHt Into Your Scripts</a></h2>
+
+          <p>You can integrate <tt class="FUNCTION">phpTidyHt</tt>
+          into your scripts in one of two ways:</p>
+
+          <ol type="1">
+            <li>
+              <p>Insert <tt class="FUNCTION">phpTidyHt</tt> into
+              your main PHP script, OR</p>
+            </li>
+
+            <li>
+              <p>Insert <tt class="FUNCTION">phpTidyHt</tt> into an
+              external common library file which is included into
+              your main script with an <b class=
+              "COMMAND">include</b> statement.</p>
+            </li>
+          </ol>
+
+          <p>The second way is preferable especially if you have
+          multiple scripts from which you will need to call <tt
+          class="FUNCTION">phpTidyHt</tt>. In either case you
+          should paste into the top of the script the defined
+          constants and any global variables in the script. As of
+          this writing, they are the following:</p>
+
+          <div class="INFORMALEXAMPLE">
+            <a name="AEN274"></a>
+
+            <table border="0" bgcolor="#E0E0E0" width="100%">
+              <tr>
+                <td>
+<pre class="PROGRAMLISTING">
+<font color=
+"#000000">define ("HTML_TIDY_ON",true); //html tidy on/off, if off, will echo to screen
+
+define ("SAVE_TIDY_ERRORS",true); //saves all errors to file specified in TIDY_LOG
+
+define ("TIDY_LOG", $DOCUMENT_ROOT."/"."tidy_log.txt"); //defines log file
+
+define ("XML_ON",false); //have output conform to xml standards
+
+define ("ALL_TIDY_ERRORS_TO_BROWSER", false); //sends all errors to browser
+
+define ("FATAL_TIDY_ERRORS_TO_BROWSER",true); //sends fatal errors only to browser
+
+define ("SHOW_POST_VARS", true); //show post variables as part of log banner
+
+$tidy_options.="-i --tidy-mark false"; //adds indent and removes tidy meta tag
+$html_tidy_path="tidy"; //sets path (directory name and file name) to the tidy executable</font>
+</pre>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="IMPORTANT">
+            <table class="IMPORTANT" width="100%" border="0">
+              <tr>
+                <td width="25" align="CENTER" valign="TOP"><img
+                src="../images/important.gif" hspace="5" alt=
+                "Important"></td>
+
+                <td align="LEFT" valign="TOP">
+                  <p>phpTidyHt may not work properly unless the <tt
+                  class="VARNAME">$html_tidy_path</tt> is set
+                  correctly. Some servers don't allow execution of
+                  an executable outside of the bin directories
+                  without an explicit designation of this path, so
+                  tidy won't execute unless this variable is set
+                  correctly.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <br>
+
+          <p>The functions in the script should be placed in either
+          your main script OR your include file, depending on
+          whether or not you are using a common library include
+          file.</p>
+        </div>
+
+        <div class="SECT2">
+          <hr>
+
+          <h2 class="SECT2"><a name="OPTIONS">5.5. phpTidyHt
+          Options</a></h2>
+
+          <p>The options available are turned on or off by setting
+          the constants and/or by changing the <tt class=
+          "VARNAME">$tidy_options</tt> variable (this variable is
+          the option string that is fed to <span class=
+          "APPLICATION">HTML Tidy</span> on the command line). Thus
+          all of the options that are available on the command line
+          with <b class="COMMAND">tidy</b> you can set with <tt
+          class="FUNCTION">phpTidyHt</tt>. For a full list of
+          available options for which you can set <tt class=
+          "VARNAME">$tidyoptions</tt> to, type <b class=
+          "COMMAND">tidy -h</b> on the command line AND see the <a
+          href="http://www.w3c.org/People/Raggett/tidy/" target=
+          "_top">HTML Tidy Home Page</a> (neither source lists the
+          full list of options). If the option can be set both by
+          the <tt class="VARNAME">$tidy_options</tt> variable or
+          any of the constants, then <tt class=
+          "VARNAME">$tidy_options</tt> controls. For example, if
+          the <tt class="CONSTANT">XML_ON</tt> constant is set to
+          <tt class="USERINPUT"><b>false</b></tt>, but the <tt
+          class="VARNAME">$tidy_options</tt> contains <tt class=
+          "USERINPUT"><b>--asxml</b></tt>, then the output will be
+          rendered as XML.</p>
+        </div>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="DEMO">6. Demo Page</a></h1>
+
+        <p><em>To demonstrate the usefulness of this script, please
+        visit the live <a href=
+        "http://www.gemini1consulting.com/tekhelp/phptidyht/phptidyht_demo.php"
+         target="_top">demo</a></em> . A copy of the <tt class=
+        "FILENAME">phptidyht_demo.php</tt> script is also included
+        in the latest version of <tt class=
+        "FUNCTION">phpTidyHt</tt>.</p>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="CODEHISTORY">7. Code
+        History</a></h1>
+
+        <p>0.5 was the first and only beta. 1.0 is the first stable
+        version of phpTidyHt (same as 0.5, with updated manual
+        covering output buffering).</p>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="CONTRIBUTIONS">8. Code
+        Contributions</a></h1>
+
+        <p>Code modifications and contributions are welcome.
+        Suggestions include:</p>
+
+        <ul>
+          <li>
+            <p>Modification to Work on Windows 95/98/NT/2000</p>
+          </li>
+
+          <li>
+            <p>Modifications to Work on PHP3</p>
+          </li>
+        </ul>
+
+        <p>Please contribute at the Sourceforge <a href=
+        " http://sourceforge.net/projects/phptidyht/" target=
+        "_top">phpTidyHt Project Page</a></p>
+      </div>
+
+      <div class="SECT1">
+        <hr>
+
+        <h1 class="SECT1"><a name="MOREINFO">9. Further
+        Information</a></h1>
+
+        <p><em>For further information on HTML and XML standards
+        and validation scnemes, visit the <a href=
+        "http://www.w3c.org" target="_top">World Wide Web
+        Consortium</a>. The W3C site contains finalized and draft
+        versions of the various W3C standards, references for
+        HTML,XML, and CSS, an HTML/XML validator, and the home page
+        for <span class="APPLICATION">HTML Tidy</span>.</em></p>
+      </div>
+    </div>
+  </body>
+</html>
+
